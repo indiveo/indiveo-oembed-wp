@@ -1,0 +1,51 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - 'master-foobarbaz'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Tests
+    env:
+      WP_CORE_DIR: "/tmp/wordpress/src"
+      WP_TESTS_DIR: "/tmp/wordpress/tests/phpunit"
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: password
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+
+      - name: Install Subversion
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y subversion
+
+      - name: Install dependencies
+        run: composer install
+
+      - name: Install WP tests
+        shell: bash
+        run: ./bin/install-wp-tests.sh ci root password 127.0.0.1
+
+      - name: Execute tests
+        run: vendor/bin/phpunit
+        env:
+          DB_HOST: 127.0.0.1
+          DB_DATABASE: ci
+          DB_USER: root
+          DB_PASSWORD: password
