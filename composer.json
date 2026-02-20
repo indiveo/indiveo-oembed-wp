@@ -1,5 +1,5 @@
 {
-    "name": "indiveo/indiveo-oembed-wp",
+    "name": "indiveo/indiveo-oembed",
     "version": "1.0.0",
     "type": "wordpress-plugin",
     "require": {

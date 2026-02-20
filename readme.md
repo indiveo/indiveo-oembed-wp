@@ -11,7 +11,7 @@ De Indiveo oEmbed plugin maakt het embedden van video's via de oEmbed-standaard 
 - ✅ Geen extra instellingen vereist
 - ✅ Werkt automatisch na activatie
 - ✅ Minimale footprint - geen overhead
-- ✅ Compatible met WordPress 6.8 en hoger
+- ✅ Compatible met WordPress 6.9 en hoger
 
 Deze plugin voegt geen extra functionaliteit toe en heeft geen instellingen; het is puur bedoeld om oEmbed te ondersteunen of te forceren bij thema's of installaties die dit standaard niet doen.
 
@@ -19,7 +19,7 @@ Deze plugin voegt geen extra functionaliteit toe en heeft geen instellingen; het
 
 - **WordPress:** 6.1 of hoger
 - **PHP:** Standaard WordPress PHP vereisten
-- **Getest tot:** WordPress 6.8.3
+- **Getest tot:** WordPress 6.9.1
 
 ## Installatie
 
@@ -28,7 +28,7 @@ Deze plugin voegt geen extra functionaliteit toe en heeft geen instellingen; het
 1. **Download de plugin:**
    ```bash
    # Download of kopieer de plugin bestanden naar:
-   /wp-content/plugins/indiveo-oembed-wp/
+   /wp-content/plugins/indiveo-oembed/
    ```
 
 2. **Activeer de plugin:**
@@ -42,7 +42,7 @@ Deze plugin voegt geen extra functionaliteit toe en heeft geen instellingen; het
 
 ### Via WordPress Admin
 
-1. Upload de `indiveo` map naar `/wp-content/plugins/`
+1. Upload de `indiveo-oembed` map naar `/wp-content/plugins/`
 2. Activeer de plugin via het 'Plugins'-menu in WordPress
 3. Plaats een oEmbed-compatibele video-URL in je bericht of pagina
 
@@ -63,27 +63,25 @@ Deze plugin voegt geen extra functionaliteit toe en heeft geen instellingen; het
    - URLs die matchen met het patroon: `https://indiveo.services/embed/*`
    - De plugin gebruikt het oEmbed endpoint: `https://indiveo.services/oembed`
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### Hoe embed ik een video?
+### Hoe embed ik een video?
 Plak gewoon een Indiveo URL (zoals `https://indiveo.services/embed/video123`) op een eigen regel in je WordPress editor. De URL wordt automatisch omgezet naar een videospeler.
 
-#### Werkt dit in alle WordPress editors?
+### Werkt dit in alle WordPress editors?
 Ja, de plugin werkt in zowel de Block Editor (Gutenberg) als de Classic Editor. Zorg er alleen voor dat de URL op een eigen regel staat.
 
-#### Kan ik de video-instellingen aanpassen?
+### Kan ik de video-instellingen aanpassen?
 De plugin biedt geen eigen instellingen. De weergave van de video wordt bepaald door de Indiveo service en je WordPress thema's styling.
 
-#### Werkt dit met page builders?
+### Werkt dit met page builders?
 Ja, zolang je page builder oEmbed ondersteunt. De meeste moderne page builders zoals Elementor, Beaver Builder en Divi ondersteunen dit.
 
-#### Wat als de video niet wordt weergegeven?
+### Wat als de video niet wordt weergegeven?
 - Controleer of de URL correct begint met `https://indiveo.services/embed/`
 - Zorg dat de URL op een eigen regel staat (niet als hyperlink)
 - Controleer of de plugin geactiveerd is
 - Probeer de pagina te verversen
-
-## Veelgestelde vragen
 
 ### Wat doet deze plugin precies?
 
@@ -107,7 +105,7 @@ Nee, de plugin werkt direct na activatie. Er zijn geen instellingenpagina's of c
 ## Technische details
 
 ### Bestanden
-- `indiveo.php` - Hoofdplugin bestand met oEmbed provider registratie
+- `indiveo-oembed.php` - Hoofdplugin bestand met oEmbed provider registratie
 - `readme.txt` - WordPress plugin repository readme
 - `readme.md` - Deze documentatie
 
@@ -126,7 +124,7 @@ De plugin gebruikt de volgende WordPress hooks:
 
 ### Compatibiliteit
 
-- **WordPress:** 6.8+
+- **WordPress:** 6.9+
 - **PHP:** Alle door WordPress ondersteunde versies
 - **Thema's:** Werkt met alle WordPress thema's
 - **Page Builders:** Compatible met populaire page builders die oEmbed ondersteunen

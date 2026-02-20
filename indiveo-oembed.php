@@ -2,8 +2,8 @@
 
 /**
  * Plugin Name: Indiveo oEmbed
- * Text Domain: indiveo-oembed-wp
- * Description: Enables the ability to paste an Indiveo URL in it's own line and for oEmbed to make it play.
+ * Text Domain: indiveo-oembed
+ * Description: Easily embed Indiveo videos using the oEmbed standard. No additional features.
  * Version: 1.0.0
  * Author: indiveo
  * Author URI: https://indiveo.nl
@@ -13,10 +13,12 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
+if (!defined( 'ABSPATH')) exit;
+
 function add_oembed_indiveo()
 {
     wp_oembed_add_provider('https://indiveo.services/embed/*', 'https://indiveo.services/oembed');
     wp_oembed_add_provider('https://indiveo.services/divis/weblink/*', 'https://indiveo.services/oembed');
 }
 
-add_action('init','add_oembed_indiveo');
+add_action('init', 'add_oembed_indiveo');
