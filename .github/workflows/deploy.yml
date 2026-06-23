@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Deploy to WordPress Plugin Directory
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
